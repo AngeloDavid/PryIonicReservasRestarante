@@ -36,8 +36,14 @@ export class MenuPage {
 
         for(let i=0; i<this.category.length;i++){
           if(this.data == this.category[i].fkPro_cat.id){
-            this.listaProducts.push(this.category[i]);
-            console.log(this.category[i]);
+            if(this.category[i].img_pro!=null){
+              this.listaProducts.push(this.category[i]);
+              console.log(this.category[i]);
+            }else{
+              this.category[i].img_pro =  'https://i2.wp.com/umeepn.files.wordpress.com/2015/11/dulcini.jpg';
+              this.listaProducts.push(this.category[i]);
+            }
+
           }
           /*console.log('dentro for');
           //console.log(this.listaProducts[0].tit_pro);
