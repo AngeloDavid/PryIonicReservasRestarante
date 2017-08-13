@@ -28,5 +28,22 @@
 
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-item-sliding *ngFor="let prod of listaProducts">
+      <ion-item >
+        <ion-thumbnail item-start>
+          <img [src]="prod.img_pro">
+        </ion-thumbnail>
+        <h2>{{prod.tit_pro}}</h2>
+        <p>{{prod.tam_pro}}</p>
+        <ion-note item-end>$ {{prod.pre_pro}}</ion-note>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="secondary">
+          <ion-icon name="md-restaurant"></ion-icon>
+            Pedir
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>

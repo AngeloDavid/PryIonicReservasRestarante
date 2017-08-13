@@ -1,4 +1,4 @@
-<ion-tabs>
-  <ion-tab tabIcon="contact" [root]="tab1"></ion-tab>
-  <ion-tab tabIcon="compass" [root]="tab2"></ion-tab>
+<ion-tabs >
+  <ion-tab tabIcon="contact" tabTitle="snack" [root]="tab1" [rootParams]="cat"></ion-tab>
+  <ion-tab *ngFor="let bar of tabs" tabIcon="contact" tabTitle="{{bar.des_cat}}" [root]="tab1" [rootParams]="bar.id"></ion-tab>
 </ion-tabs>

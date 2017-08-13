@@ -8,6 +8,9 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
 import {MenuPage,MenuTabPage,MainMenuPage, PedidoActualPage, PedidosPage, ProductoPage, PerfilPage} from '../pages/index.pages';
+import { CategoriasProvProvider } from '../providers/categorias-prov/categorias-prov';
+import {HttpModule} from '@angular/http';
+import { ProductProvProvider } from '../providers/product-prov/product-prov';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,7 @@ import {MenuPage,MenuTabPage,MainMenuPage, PedidoActualPage, PedidosPage, Produc
     PerfilPage
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
@@ -40,7 +44,9 @@ import {MenuPage,MenuTabPage,MainMenuPage, PedidoActualPage, PedidosPage, Produc
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    CategoriasProvProvider,
+    ProductProvProvider
   ]
 })
 export class AppModule {}
