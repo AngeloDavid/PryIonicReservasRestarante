@@ -30,7 +30,7 @@
 <ion-content padding>
   <ion-list>
     <ion-item-sliding *ngFor="let prod of listaProducts">
-      <ion-item >
+      <ion-item (click)="popProducto(prod)">
         <ion-thumbnail item-start>
           <img [src]="prod.img_pro">
         </ion-thumbnail>

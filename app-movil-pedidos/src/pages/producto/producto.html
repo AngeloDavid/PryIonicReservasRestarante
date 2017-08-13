@@ -1,18 +1,23 @@
-<!--
-  Generated template for the ProductoPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>Producto</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
+<ion-fab right top>
+  <button ion-fab class="fab-map" color="secondary">
+    <ion-icon name='md-restaurant'></ion-icon>
+  </button>
+</ion-fab>
+<ion-content class="cards-bg">
+  <ion-list-header text-center>{{product.tit_pro}}</ion-list-header>
+  <ion-card class="adv-map">
+    <div style="position: relative">
+      <img [src]="product.img_pro">
+    </div>
+    <ion-item>
+      <p>{{product.des_pro}}</p>
+    </ion-item>
+    <ion-item text-center>
+      <h4>Cantidad</h4>
+      <ion-icon name="remove" (click)="tapEvent2($event)"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;{{tap}}&nbsp;&nbsp;&nbsp;&nbsp;<ion-icon name="add" (click)="tapEvent($event)"></ion-icon>
+    </ion-item>
+    <ion-item actions>
+      <span ion-text item-start color="secondary" class="item-bold"><ion-icon name="logo-usd"></ion-icon> {{product.pre_pro}}</span>
+    </ion-item>
+  </ion-card>
 </ion-content>

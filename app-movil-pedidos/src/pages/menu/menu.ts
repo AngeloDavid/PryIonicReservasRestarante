@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams,MenuController, ModalController } from 'ionic-angular';
-import {PedidoActualPage} from '../../pages/index.pages';
+import { NavController, NavParams,MenuController, ModalController, PopoverController } from 'ionic-angular';
+import {PedidoActualPage, ProductoPage} from '../../pages/index.pages';
 import {ProductProvProvider} from '../../providers/product-prov/product-prov';
 import {Producto} from "../../interfaces/producto.module";
 /**
@@ -20,7 +20,7 @@ export class MenuPage {
   listaProducts:Producto[]=[];
   category:Producto[]=[];
   constructor(public navCtrl: NavController, public navParams: NavParams,private menucrl: MenuController, private modalctrl: ModalController,
-              private prod_provCtrl: ProductProvProvider) {
+              private prod_provCtrl: ProductProvProvider, private pop_Ctrl:PopoverController ) {
 
     this.data = navParams.data;
     //this.listaProducts = navParams.data;
@@ -67,6 +67,11 @@ export class MenuPage {
   mostrarPedido(){
     let modal= this.modalctrl.create(PedidoActualPage);
     modal.present();
+  }
+
+  popProducto(product:Producto){
+    let popover = this.pop_Ctrl.create(ProductoPage,{'param':product});
+    popover.present();
   }
 
 }
