@@ -1,0 +1,77 @@
+<div class="contenedor">
+  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <!--<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Menú
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Diario</a>
+            <a class="dropdown-item" href="#">Platos a la Carta</a>
+            <a class="dropdown-item" href="#">Snacks</a>
+            <a class="dropdown-item" href="#">Bebidas</a>
+          </div>
+        </li>-->
+      </ul>
+      <a class="nav-link" href="#">Registrar Producto</a>
+      <form class="form-inline my-2 my-lg-0">
+        <button [routerLink]="['principal']" type="submit" class="btn btn-default">Sign Up</button>
+      </form>
+    </div>
+  </nav>
+  <div class="row">
+    <div class="col-lg-12" align="center">
+      <br>
+      <br>
+      <h1>Bienvenido(nombre admin)</h1>
+      <h3>Hoy contamos con: </h3>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 text-left">
+        <button [routerLink]="['/admin']" type="button" class="btn btn-info"><<</button>
+      </div>
+      <div class="col-lg-6 text-lg-right">
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <table class="table table-stripped">
+    <thead class="thead-inverse">
+    <tr>
+      <th>Nro</th>
+      <th>Producto</th>
+      <th>Descripción</th>
+      <th>Precio</th>
+      <th>Stock</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th>1</th>
+      <td>Sanduche</td>
+      <td>Estudiantil</td>
+      <td>1,00</td>
+      <td>30</td>
+      <td>
+        <button class="btn btn-default btn-primary">
+          Editar
+        </button>
+        <button class="btn btn-default btn-danger">
+          Eliminar
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+
+

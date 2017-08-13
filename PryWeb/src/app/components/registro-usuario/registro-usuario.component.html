@@ -1,0 +1,119 @@
+<h1>Resgistro de usuarios</h1>
+<hr>
+
+<div class="row">
+  <div class="col-sm-6">
+    <button [routerLink]="['admin']"
+            type="button" class="btn btn-info"><<</button>
+  </div>
+  <div class="col-sm-6 text-right">
+    <button
+      type="button" (click)="limpiar()" class="btn btn-success">Limpiar</button>
+  </div>
+</div>
+
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <form (ngSubmit)="guardar()" #form="ngForm" >
+
+      <div class="form-group row">
+        <label  class="col-2 col-form-label">Nombre: </label>
+        <div class="col-10">
+          <input class="form-control" type="text"
+                 placeholder="Nombre"
+                 id="nom_user"
+                 name="nombre"
+                 [(ngModel)]="usuario.nom_user">
+        </div>
+      </div>
+
+      <div>
+        <div class="form-group row">
+          <label  class="col-2 col-form-label">Apellido: </label>
+          <div class="col-10">
+            <input class="form-control" type="text"
+                   placeholder="Apellido"
+                   name="nombre"
+                   id="ape_user"
+                   [(ngModel)]="usuario.ape_user">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label  class="col-2 col-form-label">Email: </label>
+          <div class="col-10">
+            <input class="form-control" type="text"
+                   placeholder="email"
+                   name="Email"
+                   id="ema_user"
+                   [(ngModel)]="usuario.ema_user">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label  class="col-2 col-form-label">Pass: </label>
+          <div class="col-10">
+            <input class="form-control" type="password"
+                   placeholder="#"
+                   name="pass_user"
+                   id="pass_user"
+                   [(ngModel)]="usuario.pass_user">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label  class="col-2 col-form-label">Tipo: </label>
+          <div class="col-10">
+            <input class="form-control" type="text" placeholder="tipo"
+                   name="url"
+                   id="tip_user"
+                   [(ngModel)]="usuario.tip_user">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label  class="col-2 col-form-label">Celular: </label>
+          <div class="col-10">
+            <input class="form-control" type="text"
+                   placeholder="Celular"
+                   name="nombre"
+                   id="cel_user"
+                   [(ngModel)]="usuario.cel_user">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label  class="col-2 col-form-label">Long: </label>
+          <div class="col-10">
+            <input class="form-control" type="text"
+                   placeholder="Long"
+                   name="nombre"
+                   id="lon_user"
+                   [(ngModel)]="usuario.lon_user">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label  class="col-2 col-form-label">Lat: </label>
+          <div class="col-10">
+            <input class="form-control" type="text"
+                   placeholder="Lat"
+                   name="nombre"
+                   id="lat_user"
+                   [(ngModel)]="usuario.lat_user">
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <div class="form-group">
+        <button  type="submit" class="btn btn-outline-primary">Guardar</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
