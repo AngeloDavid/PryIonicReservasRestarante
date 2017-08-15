@@ -7,10 +7,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
-import {MenuPage,MenuTabPage,MainMenuPage, PedidoActualPage, PedidosPage, ProductoPage, PerfilPage} from '../pages/index.pages';
+import {MenuPage,MenuTabPage,MainMenuPage, PedidoActualPage, PedidosPage, ProductoPage, PerfilPage,LoginPage} from '../pages/index.pages';
 import { CategoriasProvProvider } from '../providers/categorias-prov/categorias-prov';
 import {HttpModule} from '@angular/http';
 import { ProductProvProvider } from '../providers/product-prov/product-prov';
+import { UsuarioProvProvider } from '../providers/usuario-prov/usuario-prov';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProductProvProvider } from '../providers/product-prov/product-prov';
     PedidoActualPage ,
     PedidosPage,
     ProductoPage,
-    PerfilPage
+    PerfilPage,
+    LoginPage
   ],
   imports: [
     HttpModule,
@@ -39,14 +41,16 @@ import { ProductProvProvider } from '../providers/product-prov/product-prov';
     PedidoActualPage,
     PedidosPage,
     ProductoPage,
-    PerfilPage
+    PerfilPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CategoriasProvProvider,
-    ProductProvProvider
+    ProductProvProvider,
+    UsuarioProvProvider
   ]
 })
 export class AppModule {}

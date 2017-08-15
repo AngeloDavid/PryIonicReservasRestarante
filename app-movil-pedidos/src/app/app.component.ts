@@ -4,12 +4,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 //import { HomePage } from '../pages/home/home';
-import {MenuTabPage,PerfilPage,PedidoActualPage} from '../pages/index.pages';
+import {MenuTabPage,PerfilPage,PedidoActualPage, LoginPage} from '../pages/index.pages';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = MenuTabPage;
+  rootPage:any = LoginPage;
   menu:any =MenuTabPage;
   perfil:any=PerfilPage;
   Pedido:any=PedidoActualPage;

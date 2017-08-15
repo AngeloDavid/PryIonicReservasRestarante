@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import {MenuPage} from '../index.pages';
 import {Categoria} from '../../interfaces/categoria.module';
 import {CategoriasProvProvider} from '../../providers/categorias-prov/categorias-prov';
+import {UsuarioProvProvider} from '../../providers/usuario-prov/usuario-prov';
 /**
  * Generated class for the MenuTabPage page.
  *
@@ -23,7 +24,10 @@ export class MenuTabPage {
   //tab_ct: any []=[MenuPage,MenuPage,MenuPage] ;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              private cat_provCtrl: CategoriasProvProvider) {
+              private cat_provCtrl: CategoriasProvProvider,private userProv: UsuarioProvProvider) {
+  console.log(this.userProv.get_user());
+
+
 
     //console.log(this.tab_ct + 'tab1');
     this.cat_provCtrl.consultarCat().subscribe(
