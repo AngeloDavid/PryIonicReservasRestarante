@@ -1,0 +1,39 @@
+<h1>Categorias Registradas</h1>
+<hr>
+
+<div class="row">
+  <div class="col-sm-6">
+    <button [routerLink]="['/categoria']"
+            type="button" class="btn btn-atras"><<</button>
+  </div>
+</div>
+
+<br>
+
+
+<div class="row">
+  <table class="table">
+    <thead class="thead-inverse">
+    <tr>
+      <th>#</th>
+      <th>Nombre</th>
+      <!--th>Productos enlazados</th-->
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class=" align-items-center" *ngFor="let ctg of categ; let i=index">
+      <td>{{i+1}}</td>
+      <td>{{ctg.des_cat}}</td>
+      <!--td>{{ctg.prods_cat.}}</td-->
+      <td>
+        <div class="btn-group-vertical">
+          <button [routerLink]="['/categoria', ctg.id]" type="button" class="btn btn-outline-primary">Editar</button>
+          <button  type="button" (click)="eliminar(ctg.id,i)" class="btn btn-outline-danger">Eliminar</button>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

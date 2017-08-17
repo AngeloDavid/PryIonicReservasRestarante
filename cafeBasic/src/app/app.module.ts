@@ -21,6 +21,8 @@ import { RegistroProducComponent } from './components/registro-produc/registro-p
 import { DiarioComponent } from './components/diario/diario.component';
 import { PruebaComponent } from './components/prueba/prueba.component';
 import { RegistroPedidoComponent } from './components/registro-pedido/registro-pedido.component';
+import { CategoriaComponent } from './components/categoria/categoria.component';
+import { CategoriasComponent } from './components/categorias/categorias.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { RegistroPedidoComponent } from './components/registro-pedido/registro-p
     RegistroProducComponent,
     DiarioComponent,
     PruebaComponent,
-    RegistroPedidoComponent
+    RegistroPedidoComponent,
+    CategoriaComponent,
+    CategoriasComponent
   ],
   imports: [
     BrowserModule,

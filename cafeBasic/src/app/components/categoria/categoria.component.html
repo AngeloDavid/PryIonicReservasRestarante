@@ -1,0 +1,48 @@
+<h1>Resgistro de categorias</h1>
+
+<div class="row">
+  <div class="col-sm-6">
+    <button [routerLink]="['/admin']"
+            type="button" class="btn btn-atras"><<
+    </button>
+  </div>
+</div>
+
+
+<br>
+<div class="row">
+  <div class="col-md-6" style="margin-left: 40px">
+    <form (ngSubmit)="guardar()" #form="ngForm" >
+
+      <div class="form-group row">
+        <label  class="col-2 col-form-label">Nombre Categoria: </label>
+        <div class="col-10">
+          <input class="form-control" type="text"
+                 placeholder="Nombre-categ"
+                 id="des_cat"
+                 name="nombre"
+                 [(ngModel)]="categ.des_cat">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6 form-group">
+          <button  type="submit" class="btn btn-guardar">Guardar</button>
+        </div>
+        <div class="col-lg-6 text-right">
+          <button
+            type="button" (click)="limpiar()" class="btn btn-limpiar">Limpiar</button>
+        </div>
+
+        <div class="col-lg-6 text-right">
+          <button [routerLink]="['/categorias']"
+                  type="button" class="btn btn-limpiar">Mostrar</button>
+        </div>
+
+      </div>
+
+
+
+    </form>
+  </div>
+</div>
