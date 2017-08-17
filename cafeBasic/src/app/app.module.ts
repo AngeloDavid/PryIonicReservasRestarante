@@ -10,7 +10,7 @@ import { APP_ROUTING } from './app.routes';
 
 import {UsuarioService} from './services/usuario.service';
 import { ProductoService } from './services/producto.service';
-import {PedidoService} from "./services/pedido.service";
+import {PedidoService} from './services/pedido.service';
 import {CategoriaService} from './services/categoria.service';
 import { AppComponent } from './app.component';
 import { PrincipalComponent } from './components/principal/principal.component';
@@ -21,6 +21,7 @@ import { RegistroProducComponent } from './components/registro-produc/registro-p
 import { DiarioComponent } from './components/diario/diario.component';
 import { PruebaComponent } from './components/prueba/prueba.component';
 import { RegistroPedidoComponent } from './components/registro-pedido/registro-pedido.component';
+import { ListaUsuariosComponent } from './components/lista-usuarios/lista-usuarios.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { RegistroPedidoComponent } from './components/registro-pedido/registro-p
     RegistroProducComponent,
     DiarioComponent,
     PruebaComponent,
-    RegistroPedidoComponent
+    RegistroPedidoComponent,
+    ListaUsuariosComponent
   ],
   imports: [
     BrowserModule,

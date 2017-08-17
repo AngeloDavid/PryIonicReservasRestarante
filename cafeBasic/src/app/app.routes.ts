@@ -10,16 +10,18 @@ import { RegistroUsuarioComponent } from './components/registro-usuario/registro
 import { RegistroProducComponent } from './components/registro-produc/registro-produc.component';
 import { RegistroPedidoComponent } from './components/registro-pedido/registro-pedido.component';
 import { PruebaComponent } from './components/prueba/prueba.component';
+import { ListaUsuariosComponent } from './components/lista-usuarios/lista-usuarios.component';
 
 const APP_ROUTES: Routes = [
   { path: 'principal', component: PrincipalComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'cajero', component: CajeroComponent},
   { path: 'diario', component: DiarioComponent},
-  { path: 'registrousuario', component: RegistroUsuarioComponent},
+  { path: 'registrousuario/:id', component: RegistroUsuarioComponent},
   { path: 'registroproducto', component: RegistroProducComponent},
   { path: 'registropedido', component: RegistroPedidoComponent},
   { path: 'prueba', component: PruebaComponent},
+  { path: 'listausers', component: ListaUsuariosComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'principal' },
 ];
 

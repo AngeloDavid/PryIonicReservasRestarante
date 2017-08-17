@@ -26,4 +26,46 @@ export class UsuarioService {
       );
   }
 
+  getUsuarios(indice: string) {
+    let url = `${this.usuarioSails}/${ indice}`;
+    return this._http.get(url)
+      .map(
+        res => {
+          return res.json();
+        }
+      );
+  }
+
+  editarUsuario(usuario: Usuario, id: string){
+    let body= JSON.stringify(usuario);
+    let headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    let url = `${this.usuarioSails}/${id}`;
+    return this._http.put(url, body, {headers: headers}).map(
+      resultado => {
+        return resultado.json;
+      }
+    );
+  }
+
+  eliminarUsuario(key$: number) {
+    let url = `${this.usuarioSails}/${key$}`;
+    return this._http.delete(url)
+      .map(
+        res => {
+          return res.json();
+        }
+      )
+  }
+
+  consultarUsuario() {
+    return this._http.get(this.usuarioSails)
+      .map(
+        res => {
+          return res.json();
+        }
+      );
+  }
+
 }
