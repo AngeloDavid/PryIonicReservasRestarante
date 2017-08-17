@@ -18,9 +18,13 @@ export class MenuPage {
 
   data:any="";
   listaProducts:Producto[]=[];
+  listaProducts_menu:Producto[]=[];
   category:Producto[]=[];
+  id_Cat:number;
   constructor(public navCtrl: NavController, public navParams: NavParams,private menucrl: MenuController, private modalctrl: ModalController,
               private prod_provCtrl: ProductProvProvider, private pop_Ctrl:PopoverController ) {
+
+    this.id_Cat= this.navParams.get("params");
 
     this.data = navParams.data;
     //this.listaProducts = navParams.data;
@@ -29,11 +33,28 @@ export class MenuPage {
 
     this.prod_provCtrl.consultarProd().subscribe(
       resp=>{
-         this.category=resp;
+        this.category=resp;
+        console.log(this.category);
+        console.log("Imprimiendo id cate");
+        console.log(this.id_Cat + "<--");
         console.log('desde menu.ts');
         console.log(this.category[0].fkPro_cat.id);
 
+        //Para la página categorias
+        for(let i=0; i<this.category.length;i++) {
+          if (this.id_Cat == this.category[i].fkPro_cat.id) {
+            if (this.category[i].img_pro != null) {
+              this.listaProducts_menu.push(this.category[i]);
+              console.log(this.category[i]);
+            } else {
+              this.category[i].img_pro = 'https://i2.wp.com/umeepn.files.wordpress.com/2015/11/dulcini.jpg';
+              this.listaProducts_menu.push(this.category[i]);
+            }
+          }
+        }
 
+
+        //Para los tabs
         for(let i=0; i<this.category.length;i++){
           if(this.data == this.category[i].fkPro_cat.id){
             if(this.category[i].img_pro!=null){

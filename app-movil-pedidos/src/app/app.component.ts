@@ -4,7 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 //import { HomePage } from '../pages/home/home';
-import {MenuTabPage,PerfilPage,PedidoActualPage} from '../pages/index.pages';
+import {MenuTabPage,PerfilPage,PedidoActualPage, CategoriaPage} from '../pages/index.pages';
 @Component({
   templateUrl: 'app.html'
 })
@@ -13,6 +13,7 @@ export class MyApp {
   menu:any =MenuTabPage;
   perfil:any=PerfilPage;
   Pedido:any=PedidoActualPage;
+  category: any= CategoriaPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,private menucrl:MenuController) {
     platform.ready().then(() => {

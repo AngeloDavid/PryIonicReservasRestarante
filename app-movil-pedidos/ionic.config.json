@@ -1,5 +1,8 @@
 {
   "name": "app-movil-pedidos",
   "app_id": "2654d9f5",
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }

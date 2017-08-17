@@ -7,7 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
-import {MenuPage,MenuTabPage,MainMenuPage, PedidoActualPage, PedidosPage, ProductoPage, PerfilPage} from '../pages/index.pages';
+import {MenuPage,MenuTabPage,MainMenuPage, PedidoActualPage, PedidosPage, ProductoPage, PerfilPage, CategoriaPage } from '../pages/index.pages';
 import { CategoriasProvProvider } from '../providers/categorias-prov/categorias-prov';
 import {HttpModule} from '@angular/http';
 import { ProductProvProvider } from '../providers/product-prov/product-prov';
@@ -22,7 +22,8 @@ import { ProductProvProvider } from '../providers/product-prov/product-prov';
     PedidoActualPage ,
     PedidosPage,
     ProductoPage,
-    PerfilPage
+    PerfilPage,
+    CategoriaPage
   ],
   imports: [
     HttpModule,
@@ -39,7 +40,8 @@ import { ProductProvProvider } from '../providers/product-prov/product-prov';
     PedidoActualPage,
     PedidosPage,
     ProductoPage,
-    PerfilPage
+    PerfilPage,
+    CategoriaPage
   ],
   providers: [
     StatusBar,

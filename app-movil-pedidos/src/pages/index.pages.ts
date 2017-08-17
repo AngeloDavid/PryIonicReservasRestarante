@@ -5,3 +5,4 @@ export {PedidoActualPage} from './pedido-actual/pedido-actual';
 export {ProductoPage} from './producto/producto';
 export {PedidosPage} from './pedidos/pedidos';
 export {PerfilPage} from './perfil/perfil';
+export {CategoriaPage} from './categoria/categoria';
