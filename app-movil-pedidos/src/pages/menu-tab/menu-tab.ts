@@ -25,7 +25,11 @@ export class MenuTabPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private cat_provCtrl: CategoriasProvProvider,private userProv: UsuarioProvProvider) {
-  console.log(this.userProv.get_user());
+    console.log("hola");
+
+    this.userProv.getUser(this.navParams.get("params")).subscribe(
+      resp=>{console.log(resp)}
+    );
 
 
 
@@ -45,8 +49,8 @@ export class MenuTabPage {
               //page: MenuPage,
           });
         }
-        console.log("menu tabs");
-        console.log(this.tabs);
+        //console.log("menu tabs");
+        //console.log(this.tabs);
 
         /*let lenght=this.tabs.length;
         console.log(lenght);*/

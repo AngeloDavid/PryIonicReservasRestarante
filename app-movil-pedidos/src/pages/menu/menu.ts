@@ -63,6 +63,9 @@ export class MenuPage {
   mostarMenu(){
     this.menucrl.toggle();
   }
+  mostrarM(){
+    this.menucrl.open("2");
+  }
 
   mostrarPedido(){
     let modal= this.modalctrl.create(PedidoActualPage);

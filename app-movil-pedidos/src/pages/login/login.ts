@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {UsuarioProvProvider} from '../../providers/usuario-prov/usuario-prov';
 import { ToastController } from 'ionic-angular';
-import {Observable} from 'rxjs/Observable';
 import {MenuTabPage} from '../menu-tab/menu-tab';
 /**
  * Generated class for the LoginPage page.
@@ -39,8 +38,7 @@ export class LoginPage {
       this.userProv.loginUSer(this.usuario.username,this.usuario.password).subscribe(
         resp=>{
           if(resp.id !=-1){
-            console.log(this.userProv.login(this.usuario.username,this.usuario.password));
-            this.navCtrl.setRoot(MenuTabPage);
+            this.navCtrl.setRoot(MenuTabPage,{"params":resp.id});
           }
         }
       );
