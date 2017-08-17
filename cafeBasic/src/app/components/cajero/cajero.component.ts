@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import { Router } from '@angular/router'
+import { PedidoService } from '../../services/pedido.service';
 
 @Component({
   selector: 'app-cajero',
@@ -8,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CajeroComponent implements OnInit {
 
-  constructor() { }
+  pedido: any[] = [];
+  constructor(private _ped: PedidoService) {
+    this._ped.consultarPedido().subscribe(
+      resp => {
+        this.pedido = resp;
+        console.log(this.pedido);
+      }
+    );
+  }
 
   ngOnInit() {
   }

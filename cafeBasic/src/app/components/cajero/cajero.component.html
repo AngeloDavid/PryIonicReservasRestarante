@@ -33,40 +33,35 @@
 
   </div>
   <hr>
-  <div>
+  <!--<div>
     <p>Nuevo pedido:
       <button [routerLink]="['/registropedido']" type="button" class="btn btn-primary">+</button>
     </p>
   </div>
-
+-->
   <br>
 
   <table class="table table-stripped">
     <thead class="thead-inverse">
-    <tr>
+    <tr >
       <th>Nro</th>
-      <th>Cliente</th>
-      <th>Producto</th>
-      <th>Descripción</th>
       <th>Cantidad</th>
-      <th>Acciones</th>
+      <th>Subtotal</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <th>1</th>
-      <td>Juan</td>
-      <td>Cafe</td>
-      <td>Con crema</td>
-      <td>2</td>
-      <td>
+    <tr *ngFor="let ped of pedido; let i=index">
+      <th>{{i+1}}</th>
+      <td>{{ped.cant_det}}</td>
+      <td>{{ped.st_Det}}</td>
+      <!--<td>
         <button class="btn btn-default btn-primary">
           Editar
         </button>
         <button class="btn btn-default btn-danger">
           Eliminar
         </button>
-      </td>
+      </td>-->
     </tr>
     </tbody>
   </table>

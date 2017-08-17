@@ -6,7 +6,7 @@ import 'rxjs/RX';
 @Injectable()
 export class PedidoService {
 
-  pedidoSails: string = 'http://port-3000.maferserver-mafersua383643.codeanyapp.com/pedido';
+  pedidoSails: string = 'http://port-3000.prydusini-angelodavid95426006.codeanyapp.com/det_pedido';
 
   constructor(private _http: Http) { }
 
@@ -21,6 +21,15 @@ export class PedidoService {
         res => {
           console.log(res.json());
           return res.json;
+        }
+      );
+  }
+
+  consultarPedido() {
+    return this._http.get(this.pedidoSails)
+      .map(
+        res => {
+          return res.json();
         }
       );
   }
