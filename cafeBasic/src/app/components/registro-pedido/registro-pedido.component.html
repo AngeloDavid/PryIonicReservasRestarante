@@ -1,0 +1,66 @@
+<h1>Resgistro de Pedidos</h1>
+<hr>
+
+<div class="row">
+  <div class="col-sm-6">
+    <button [routerLink]="['/cajero']"
+            type="button" class="btn btn-atras"><<</button>
+  </div>
+</div>
+
+<br>
+<div class="row">
+  <div class="col-md-6" style="margin-left: 40px">
+    <form (ngSubmit)="guardar()" #form="ngForm" >
+
+      <div class="form-group row">
+        <label  class="col-2 col-form-label">Cantidad: </label>
+        <div class="col-10">
+          <input class="form-control" type="text"
+                 placeholder="Cantidad"
+                 id="cant"
+                 name="cant"
+                 [(ngModel)]="pedido.cant_det">
+        </div>
+      </div>
+
+      <div>
+        <div class="form-group row">
+          <label  class="col-2 col-form-label">Stock: </label>
+          <div class="col-10">
+            <input class="form-control" type="text"
+                   placeholder="Stock"
+                   name="st"
+                   id="st"
+                   [(ngModel)]="pedido.st_det">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label  class="col-2 col-form-label">Estado: </label>
+          <div class="radio">
+            <input type="radio"
+                          name="estado"
+                          value="estado"
+                          id="est_det"
+                          [(ngModel)]="pedido.est_det">no selecionar da error aun
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-lg-6 form-group">
+          <button  type="submit" class="btn btn-guardar">Guardar</button>
+        </div>
+        <div class="col-lg-6 text-right">
+          <button
+            type="button" (click)="limpiar()" class="btn btn-limpiar">Limpiar</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+

@@ -6,3 +6,4 @@ export {ProductoPage} from './producto/producto';
 export {PedidosPage} from './pedidos/pedidos';
 export {PerfilPage} from './perfil/perfil';
 export {CategoriaPage} from './categoria/categoria';
+export {LoginPage} from './login/login';

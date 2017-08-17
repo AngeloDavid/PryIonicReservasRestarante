@@ -1,0 +1,18 @@
+.btn-atras{
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  width: 50px;
+  height: 40px;
+  padding: 10px;
+}
+.btn-limpiar{
+  background-color: black;
+  color: white;
+}
+
+.btn-guardar{
+  background-color: darkcyan;
+  color: white;
+}
