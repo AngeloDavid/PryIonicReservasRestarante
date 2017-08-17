@@ -85,7 +85,7 @@ export class MenuPage {
     this.menucrl.toggle();
   }
   mostrarM(){
-    this.menucrl.open("2");
+   this.menucrl.open("2");
   }
 
   mostrarPedido(){
