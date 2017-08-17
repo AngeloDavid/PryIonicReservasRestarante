@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-//Rutas
+// Rutas
 import { APP_ROUTING } from './app.routes';
 
-//Servicios
+// Servicios
 
 import {UsuarioService} from './services/usuario.service';
 import { ProductoService } from './services/producto.service';
-import {PedidoService} from "./services/pedido.service";
+import {PedidoService} from './services/pedido.service';
 import {CategoriaService} from './services/categoria.service';
 import { AppComponent } from './app.component';
 import { PrincipalComponent } from './components/principal/principal.component';
@@ -23,7 +23,7 @@ import { PruebaComponent } from './components/prueba/prueba.component';
 import { RegistroPedidoComponent } from './components/registro-pedido/registro-pedido.component';
 import { CategoriaComponent } from './components/categoria/categoria.component';
 import { CategoriasComponent } from './components/categorias/categorias.component';
-
+import { ListaUsuariosComponent } from './components/lista-usuarios/lista-usuarios.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,8 @@ import { CategoriasComponent } from './components/categorias/categorias.componen
     PruebaComponent,
     RegistroPedidoComponent,
     CategoriaComponent,
-    CategoriasComponent
+    CategoriasComponent,
+    ListaUsuariosComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,36 @@
+<h1>Lista de Usuarios</h1>
+<hr>
+<div class="row">
+  <div class="col-md-12 text-right">
+    <button [routerLink]="['registrousuario','nuevo']"
+            type="button" class="btn btn-primary">+</button>
+  </div>
+</div>
+<br>
+<table class="table">
+  <thead class="table-inverse">
+  <tr>
+    <th>#</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Email</th>
+    <th>Tipo</th>
+    <th>Celular</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let usuario of usuarios; let i=index">
+    <th>{{i+1}}</th>
+    <th>{{usuario.nom_user}}</th>
+    <th>{{usuario.ape_user}}</th>
+    <th>{{usuario.ema_user }}</th>
+    <th>{{usuario.tip_user}}</th>
+    <th>{{usuario.cel_user }}</th>
+    <th>
+      <button [routerLink]="['/registrousuario', usuario.id ]" type="button" class="btn btn-outline-primary">Editar</button>
+      <button (click)="eliminar(usuario.id, i) "type="button" class="btn btn-outline-danger">Eliminar</button>
+    </th>
+  </tr>
+  </tbody>
+</table>
+

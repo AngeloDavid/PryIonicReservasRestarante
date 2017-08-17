@@ -9,6 +9,7 @@ import { RegistroPedidoComponent } from './components/registro-pedido/registro-p
 import { PruebaComponent } from './components/prueba/prueba.component';
 import { CategoriaComponent } from './components/categoria/categoria.component';
 import { CategoriasComponent } from './components/categorias/categorias.component';
+import { ListaUsuariosComponent } from './components/lista-usuarios/lista-usuarios.component';
 
 const APP_ROUTES: Routes = [
   { path: 'principal', component: PrincipalComponent },
@@ -17,10 +18,11 @@ const APP_ROUTES: Routes = [
   { path: 'categoria/:id', component: CategoriaComponent},
   { path: 'categorias', component: CategoriasComponent},
   { path: 'diario', component: DiarioComponent},
-  { path: 'registrousuario', component: RegistroUsuarioComponent},
-  { path: 'registroproducto', component: RegistroProducComponent},
+  { path: 'registrousuario/:id', component: RegistroUsuarioComponent},
+  { path: 'registroproducto/:id', component: RegistroProducComponent},
   { path: 'registropedido', component: RegistroPedidoComponent},
   { path: 'prueba', component: PruebaComponent},
+  { path: 'listausers', component: ListaUsuariosComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'principal' },
 ];
 

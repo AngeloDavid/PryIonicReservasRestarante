@@ -6,7 +6,7 @@ import 'rxjs/RX';
 @Injectable()
 export class PedidoService {
 
-  pedidoSails: string = 'http://port-1337.maferserver-mafersua383643.codeanyapp.com/pedido';
+  pedidoSails: string = 'http://port-3000.maferserver-mafersua383643.codeanyapp.com/pedido';
 
   constructor(private _http: Http) { }
 

@@ -22,7 +22,7 @@ export class CategoriaComponent implements OnInit {
   constructor(private _catService: CategoriaService,
               private _router: Router,
               private _activated: ActivatedRoute) {
-    console.log("sirveee");
+    console.log('sirvee');
     this._activated.params.subscribe(
       param => {
         this.id = param['id'];

@@ -4,98 +4,87 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon ">=</span>
     </button>
-    <a class="navbar-brand fuentem" href="#">Bienvenido Administrador</a>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown col-5">
+        <a class="dropdown-toggle  fuentem " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Producto</a>
+        <ul class="dropdown-menu ">
+          <li>
+            <a class="dropdown-item fuente-norm " [routerLink]="['/registroproducto','nuevo']">Nuevo Producto</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown col-5">
+        <a class="dropdown-toggle  fuentem " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Usuarios</a>
+        <ul class="dropdown-menu ">
+          <li>
+            <a class="dropdown-item fuente-norm " [routerLink]="['/registrousuario','nuevo']">Nuevo Usuario</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown col-5">
+        <a class="dropdown-toggle  fuentem " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Categorias</a>
+        <ul class="dropdown-menu ">
+          <li>
+            <a class="dropdown-item fuente-norm " [routerLink]="['/registrousuario','nuevo']">Nuevo Categoria</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
     <div class="collapse navbar-collapse"id="navbarSupportedContent" >
+
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown pt-2 pr-3">
-            <a class="nav-link fuentem" [routerLink]="['/']">Productos</a>
+          <a class="navbar-brand fuentem" href="#">Bienvenido Administrador</a>
         </li>
-        <li class="nav-item dropdown pt-2 pr-3">
-          <a class="nav-link fuentem" [routerLink]="['/']">Usuarios</a>
+        <li class="nav-item dropdown pt-1 pr-3">
+          <a class="nav-link fuentem" [routerLink]="['/principal']">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a>
         </li>
-        <li class="nav-item dropdown pt-2 pr-3">
-          <a class="nav-link fuentem" [routerLink]="['/']">Categorias</a>
-        </li>
-        <li class="nav-item dropdown pt-2 pr-3">
-          <a class="nav-link fuentem" [routerLink]="['/principal']">>>Log out</a>
-        </li>
-
       </ul>
     </div>
   </nav>
 </div>
-<!--<div class="contenedor" style="">
-  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="#">Inicio</a>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/diario']">Diario</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Platos a la Carta</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Snacks</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Bebidas</a>
-        </li>
-        <!--<li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Menú
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Diario</a>
-            <a class="dropdown-item" href="#">Platos a la Carta</a>
-            <a class="dropdown-item" href="#">Snacks</a>
-            <a class="dropdown-item" href="#">Bebidas</a>
-          </div>
-        </li>-->
-      <!--</ul>
-      <a class="nav-link" href="/registrousuario">Usuarios</a>
-      <a class="nav-link" href="/registroproducto">Productos</a>
-      <form class="form-inline my-2 my-lg-0">
-        <button [routerLink]="['principal']" type="submit" class="btn btn-default">Sign Up</button>
-      </form>
-    </div>
-  </nav>-->
 
 
-  <!--<nav class="nav flex-column">
-    <a class="nav-link active" href="#">Active</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link disabled" href="#">Disabled</a>
-  </nav>-->
-  <!--<div class="row">
-    <div class="col-6">
-      <nav class="nav flex-column bg-inverse">
-        <a class="nav-link active" href="#">Diario</a>
-        <a class="nav-link" href="#">Platos a la Carta</a>
-        <a class="nav-link" href="#">Snacks</a>
-        <a class="nav-link disabled" href="#">Bebidas</a>
-      </nav>
+<div class="container">
+
+  <form>
+    <div class="form-group col-6">
+      <label for="exampleSelect1" class="fuente-norm mt-2">Categoria</label>
+      <select class="form-control" id="exampleSelect1">
+        <option *ngFor="let cat of categories" >{{cat.des_cat}}</option>
+      </select>
     </div>
-    <div class="col-6">
-      <div class="row">
-        <div class="col-lg-12" align="center">
-          <br>
-          <br>
-          <h1>Bienvenido(nombre admin)</h1>
-        </div>
-      </div>
-    </div>
-  </div>-->
-  <!--<div class="row">
-    <div class="col-lg-12" align="center">
-      <br>
-      <br>
-      <h1>Bienvenido(nombre admin)</h1>
-    </div>
-  </div>
-</div>-->
+  </form>
+  <table class="table table-stripped">
+    <thead class="thead-inverse">
+    <tr>
+      <th>Nro</th>
+      <th>Producto</th>
+      <th>Descripción</th>
+      <th>Tamaño</th>
+      <th>Precio</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let prod of products;let i=index">
+      <th>{{i+1}}</th>
+      <td>{{prod.tit_pro}}</td>
+      <td>{{prod.des_pro}}</td>
+      <td>{{prod.tam_pro}}</td>
+      <td>{{prod.pre_pro}}</td>
+      <td>
+        <button class="btn btn-default btn-primary" [routerLink]="['/registroproducto', prod.id ]" >
+          Editar
+        </button>
+        <button (click)="eliminarProd(prod.id,i)"  class="btn btn-default btn-danger">
+          Eliminar
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

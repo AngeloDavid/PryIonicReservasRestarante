@@ -24,23 +24,47 @@ export class RegistroUsuarioComponent implements OnInit {
   };
   constructor(private _usuarioService: UsuarioService,
               private _router: Router,
-              private _activatedRoute: ActivatedRoute) { }
+              private _activatedRoute: ActivatedRoute) {
+    this._activatedRoute.params.subscribe(
+      parametros => {
+        this.id = parametros['id'];
+        if (this.id !== 'nuevo') {
+          this._usuarioService.getUsuarios(this.id).subscribe(
+            resultado => {
+              this.usuario = resultado;
+            }
+          );
+        }
+      }
+    );
+  }
 
   ngOnInit() {
   }
 
   guardar(){
     console.log(this.usuario);
-    this._usuarioService.nuevoUsuario(this.usuario)
-      .subscribe(
+    if (this.id == 'nuevo') {
+      this._usuarioService.nuevoUsuario(this.usuario)
+        .subscribe(
+          resultado => {
+            console.dir(resultado);
+            this._router.navigate(['admin', this.usuario.id]);
+          },
+          error => {
+            console.log(error);
+          }
+        );
+    }else {
+      this._usuarioService.editarUsuario(this.usuario, this.id).subscribe(
         resultado => {
-          console.dir(resultado);
-          this._router.navigate(['/admin', this.usuario.id]);
+          this._router.navigate(['/istausers' ]);
         },
         error => {
           console.log(error);
         }
       );
+    }
   }
 
   limpiar(){
