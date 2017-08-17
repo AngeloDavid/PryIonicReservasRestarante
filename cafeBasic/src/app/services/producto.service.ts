@@ -6,7 +6,7 @@ import 'rxjs/RX';
 @Injectable()
 export class ProductoService {
 
-  usuarioSails: string = 'http://port-1337.prydusini-angelodavid95426006.codeanyapp.com/categoria';
+  productoSails: string = 'http://port-3000.prydusini-angelodavid95426006.codeanyapp.com/producto';
 
 
   constructor(private _http: Http) { }
@@ -17,11 +17,53 @@ export class ProductoService {
       'Content-Type': 'application/json'
     });
 
-    return this._http.post(this.usuarioSails, body, {headers: headers})
+    return this._http.post(this.productoSails, body, {headers: headers})
       .map(
         res => {
           console.log(res.json());
-          return res.json;
+          return res.json();
+        }
+      );
+  }
+
+  consultarProdSails() {
+    return this._http.get(this.productoSails)
+      .map(
+        res => {
+          return res.json();
+        }
+      );
+  }
+
+  getProd(indice: string) {
+    let urls = `${this.productoSails}/${ indice}`;
+    return this._http.get(urls)
+      .map(
+        res => {
+          return res.json();
+        }
+      );
+  }
+
+  editarProd(producto: Producto, id: string) {
+    let body= JSON.stringify(producto);
+    let headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    let url = `${this.productoSails}/${id}`;
+    return this._http.put(url, body, {headers: headers}).map(
+      resultado => {
+        return resultado.json;
+      }
+    );
+  }
+
+  eliminarProd(key$: string) {
+    let url = `${this.productoSails}/${key$}`;
+    return this._http.delete(url)
+      .map(
+        res => {
+          return res.json();
         }
       );
   }

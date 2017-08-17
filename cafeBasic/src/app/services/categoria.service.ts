@@ -5,7 +5,7 @@ import 'rxjs/RX';
 @Injectable()
 export class CategoriaService {
 
-  urlCategoria: string = ' http://port-1337.prydusini-angelodavid95426006.codeanyapp.com/categoria ';
+  urlCategoria: string = ' http://port-3000.prydusini-angelodavid95426006.codeanyapp.com/categoria ';
   constructor(private _http: Http) { }
 
   consultarCat() {

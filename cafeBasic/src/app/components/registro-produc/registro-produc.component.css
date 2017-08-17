@@ -16,3 +16,28 @@
   background-color: darkcyan;
   color: white;
 }
+
+.bg-color{
+  background-color: #212F3C;
+}
+
+.fuente-norm{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.fuentem{
+  font-size: 17px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+a.fuentem:hover{
+  color: #F39C12  ;
+  font-weight: bold;
+}
+
+a:hover, a:focus{
+  text-decoration: none;
+}

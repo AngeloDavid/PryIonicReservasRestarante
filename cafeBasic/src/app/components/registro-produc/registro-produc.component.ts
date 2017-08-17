@@ -19,41 +19,58 @@ export class RegistroProducComponent implements OnInit {
     des_pro: '',
     tam_pro: '',
     pre_pro: 0,
-    categoria: '',
-  }
+    fkProd_cat: {
+      des_cat: '',
+    }
+  };
   categories: Categoria[]= [];
   constructor(private _productoService: ProductoService,
               private _router: Router,
               private _activatedRoute: ActivatedRoute, private _catService: CategoriaService) {
 
-    console.log("dasdashjdasd");
+    console.log('dasdashjdasd');
     this._catService.consultarCat().subscribe(
       resp => {
         this.categories = resp;
-        console.log("desde const registr prod.ts");
+        console.log('desde const registr prod.ts');
         console.log(this.categories);
         console.log(this.categories[0].id);
       });
 
+    this._activatedRoute.params.subscribe(
+      params => {
+        this.id = params['id'];
+        if (this.id !== 'nuevo') {
+          this._productoService.getProd(this.id).subscribe(
+            resultado => {
+              this.producto = resultado;
+              console.log(this.producto);
+            }
+          );
+        }
+      });
   }
 
   ngOnInit() {
 
   }
 
-  guardarProducto(){
+  guardarProducto() {
     console.log("hola guardar");
     console.log(this.producto);
-    this._productoService.nuevoProducto(this.producto)
-      .subscribe(
+    if (this.id === 'nuevo') {
+      this._productoService.nuevoProducto(this.producto)
+        .subscribe(
+          resultado => {
+            console.dir(resultado);
+            this._router.navigate(['/registroproducto', resultado.id]);
+          });
+    }else {
+      this._productoService.editarProd(this.producto, this.id).subscribe(
         resultado => {
-          console.dir(resultado);
-          this._router.navigate(['/registroproducto', this.producto.id]);
-        },
-        error => {
-          console.log(error);
-        }
-      );
+          this._router.navigate(['/admin']);
+        });
+    }
   }
 
   limpiar(){
@@ -63,7 +80,9 @@ export class RegistroProducComponent implements OnInit {
       des_pro: '',
       tam_pro: '',
       pre_pro: 0,
-      categoria: '',
+      fkProd_cat: {
+        des_cat: '',
+      }
     };
   }
 

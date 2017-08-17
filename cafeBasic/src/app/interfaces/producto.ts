@@ -4,5 +4,8 @@ export interface Producto {
   des_pro: string;
   tam_pro: string;
   pre_pro: number;
-  categoria: string;
+  img_pro?: string;
+  fkProd_cat: {
+    des_cat:string;
+  };
 }
