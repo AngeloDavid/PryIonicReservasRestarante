@@ -1,6 +1,25 @@
-<h1>Resgistro de Pedidos</h1>
-<hr>
+<div class="container-fluid pl-0 pr-0">
+  <nav class="navbar navbar-toggleable-md bg-color bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon ">=</span>
+    </button>
+    <ul class="navbar-nav ml-auto col-8">
+      <li class="nav-item dropdown pt-1 pr-3 fuentem ">
+        <a class="nav-link ">Nuevo Pedido</a>
+      </li>
+    </ul>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown pt-1 pr-3">
+          <a class="nav-link fuentem" [routerLink]="['/principal']">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
 
+<div class="container mt-5">
 <div class="row">
   <div class="col-sm-6">
     <button [routerLink]="['/cajero']"
@@ -43,7 +62,7 @@
                           name="estado"
                           value="estado"
                           id="est_det"
-                          [(ngModel)]="pedido.est_det">no selecionar da error aun
+                          [(ngModel)]="pedido.est_det"> En proceso
           </div>
         </div>
       </div>
@@ -63,4 +82,4 @@
     </form>
   </div>
 </div>
-
+</div>

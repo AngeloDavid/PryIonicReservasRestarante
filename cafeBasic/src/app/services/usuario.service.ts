@@ -7,11 +7,11 @@ import 'rxjs/RX';
 @Injectable()
 export class UsuarioService {
 
-  usuarioSails: string = 'http://port-3000.prydusini-angelodavid95426006.codeanyapp.com/Usuario';
+  usuarioSails:string= 'http://port-3000.prydusini-angelodavid95426006.codeanyapp.com/Usuario';
 
   constructor(private _http: Http) { }
 
-  nuevoUsuario(usuario: Usuario){
+  nuevoUsuario(usuario: Usuario)  {
     const body = JSON.stringify(usuario);
     const headers = new Headers({
       'Content-Type': 'application/json'
@@ -36,7 +36,7 @@ export class UsuarioService {
       );
   }
 
-  editarUsuario(usuario: Usuario, id: string){
+  editarUsuario(usuario: Usuario, id: string) {
     let body= JSON.stringify(usuario);
     let headers = new Headers({
       'Content-Type': 'application/json'
@@ -56,7 +56,7 @@ export class UsuarioService {
         res => {
           return res.json();
         }
-      )
+      );
   }
 
   consultarUsuario() {

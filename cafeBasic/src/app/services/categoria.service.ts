@@ -31,7 +31,7 @@ export class CategoriaService {
       );
   }
 
-  //todas las categorias
+  // todas las categorias
   mostrarCateg() {
     return this._http.get(`${this.urlCategoria}`).map(
       resultado => {
@@ -42,7 +42,7 @@ export class CategoriaService {
 
   editarCateg( categ: Categoria, id: number) {
     let body = JSON.stringify(categ);
-    //console.log(body);
+    // console.log(body);
     let headers1 = new Headers({
       'Content-type': 'application/json'
     });
