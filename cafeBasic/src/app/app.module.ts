@@ -2,11 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
 
-//Rutas
+// Rutas
 import { APP_ROUTING } from './app.routes';
 
-//Servicios
+// Servicios
 
 import {UsuarioService} from './services/usuario.service';
 import { ProductoService } from './services/producto.service';
@@ -38,6 +39,7 @@ import { ListaUsuariosComponent } from './components/lista-usuarios/lista-usuari
     ListaUsuariosComponent
   ],
   imports: [
+    Angular2FontawesomeModule,
     BrowserModule,
     FormsModule,
     HttpModule,

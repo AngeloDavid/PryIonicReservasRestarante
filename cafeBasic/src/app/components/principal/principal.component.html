@@ -4,7 +4,7 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon ">=</span>
     </button>
-    <!--<a class="navbar-brand fuentem" href="#">Topicos Especiales</a>-->
+    <a class="navbar-brand fuentem" href="#">Topicos Especiales</a>
     <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!--<ul class="navbar-nav ">
         <li class="nav-item">
@@ -31,13 +31,13 @@
           <a class="nav-link fuentem" [routerLink]="['/cajero']">Cajero</a>
         </li>
 
-        <li class="nav-item dropdown pt-2 pr-3">
-          <a class="dropdown-toggle fuentem" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Administrador </a>
-          <ul class="dropdown-menu">
+        <li class="nav-item dropdown pr-3">
+          <a class="nav-link fuentem" [routerLink]="['/admin']">Administrador </a>
+          <!--<ul class="dropdown-menu">
             <li><a class="dropdown-item fuente-norm " [routerLink]="['/registrousuario']">Usuario</a></li>
             <li><a class="dropdown-item fuente-norm" [routerLink]="['/diario']">Productos</a></li>
             <li><a class="dropdown-item fuente-norm" >Categorias</a></li>
-          </ul>
+          </ul>-->
         </li>
 
         <li class="nav-item dropdown mr-5 pr-5  pt-2 ">
@@ -64,8 +64,8 @@
       <div class="row h-100">
         <div class="col-lg-7 my-auto">
           <div class="header-content mx-auto">
-            <h1 class="mb-5">New Age is an app landing page that will help you beautifully showcase your new mobile app, or anything else!</h1>
-            <a href="#download" class="btn btn-outline btn-xl">Start Now for Free!</a>
+            <h1 class="mb-5">Dulsini ! es nuestra nueva app , que te ayudará a realizar pedidos desde cualquier lugar en donde te encuentres</h1>
+            <a href="#download" class="btn btn-outline btn-xl">Empieza ahora gratis !</a>
           </div>
         </div>
         <div class="col-lg-5 my-auto">
@@ -91,8 +91,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 mx-auto">
-          <h2 class="section-heading">Discover what all the buzz is about!</h2>
-          <p>Our app is available on any mobile device! Download now to get started!</p>
+          <h2 class="section-heading">Descubre de que se trata</h2>
+          <p>Nuestra app esta disponible para cualquier smartphone ! Descargatela ya!</p>
           <div class="badges">
             <a class="badge-link" href="#"><img src="../../../assets/img/google-play-badge.svg" alt=""></a>
             <a class="badge-link" href="#"><img src="../../../assets/img/app-store-badge.svg" alt=""></a>
@@ -105,61 +105,22 @@
   <section class="features" id="features">
     <div class="container">
       <div class="section-heading text-center">
-        <h2>Unlimited Features, Unlimited Fun</h2>
-        <p class="text-muted">Check out what you can do with this app theme!</p>
+        <h2>Portfolio</h2>
+        <p class="text-muted">Mira nuestros productos!</p>
         <hr>
       </div>
-      <div class="row">
-        <div class="col-lg-4 my-auto">
-          <div class="device-container">
-            <div class="device-mockup iphone6_plus portrait white">
-              <div class="device">
-                <div class="screen">
-                  <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                  <img src="../../../assets/img/demo-screen-1.jpg" class="img-fluid" alt="">
-                </div>
-                <div class="button">
-                  <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-8 my-auto">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="feature-item">
-                  <i class="icon-screen-smartphone text-primary"></i>
-                  <h3>Device Mockups</h3>
-                  <p class="text-muted">Ready to use HTML/CSS device mockups, no Photoshop required!</p>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="feature-item">
-                  <i class="icon-camera text-primary"></i>
-                  <h3>Flexible Use</h3>
-                  <p class="text-muted">Put an image, video, animation, or anything else in the screen!</p>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="feature-item">
-                  <i class="icon-present text-primary"></i>
-                  <h3>Free to Use</h3>
-                  <p class="text-muted">As always, this theme is free to download and use for any purpose!</p>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="feature-item">
-                  <i class="icon-lock-open text-primary"></i>
-                  <h3>Open Source</h3>
-                  <p class="text-muted">Since this theme is MIT licensed, you can use it commercially!</p>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="row ">
+        <div class="card-group">
+         <div class="col-3" *ngFor="let prod of productos; let i=index">
+           <div class="card "  *ngIf="i<4">
+               <img class="card-img-top" style="width: 255px; height: 180px;" [src]="prod.img_pro" alt="Card image cap">
+               <div class="card-block">
+                 <h4 class="card-title">{{prod.tit_pro}}</h4>
+                 <p class="card-text">{{prod.des_pro}}</p>
+                 <p class="card-text"><small class="text-muted">$ {{prod.pre_pro}}</small></p>
+               </div>
+           </div>
+         </div>
         </div>
       </div>
     </div>
@@ -171,16 +132,16 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading">Our Amazing Team</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h2 class="section-heading">Nuestro maravilloso equipo!</h2>
+          <h3 class="section-subheading text-muted">Ideas innovadoras</h3>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-3">
           <div class="team-member">
             <img class="mx-auto rounded-circle" src="../../../assets/img/1.jpg" alt="">
-            <h4>Kay Garland</h4>
-            <p class="text-muted">Lead Designer</p>
+            <h4>Mafer Suárez</h4>
+            <p class="text-muted">Lead Developer</p>
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
                 <a href="#">
@@ -203,7 +164,7 @@
         <div class="col-sm-3">
           <div class="team-member">
             <img class="mx-auto rounded-circle" src="../../../assets/img/1.jpg" alt="">
-            <h4>Kay Garland</h4>
+            <h4>Gaby Sangucho</h4>
             <p class="text-muted">Lead Designer</p>
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
@@ -227,8 +188,8 @@
         <div class="col-sm-3">
           <div class="team-member">
             <img class="mx-auto rounded-circle" src="../../../assets/img/2.jpg" alt="">
-            <h4>Larry Parker</h4>
-            <p class="text-muted">Lead Marketer</p>
+            <h4>Angelo Flores</h4>
+            <p class="text-muted">Lead Developer</p>
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
                 <a href="#">
@@ -251,7 +212,7 @@
         <div class="col-sm-3">
           <div class="team-member">
             <img class="mx-auto rounded-circle" src="../../../assets/img/3.jpg" alt="">
-            <h4>Diana Pertersen</h4>
+            <h4>Tatiana Montenegro</h4>
             <p class="text-muted">Lead Developer</p>
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
@@ -275,7 +236,7 @@
       </div>
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
-          <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+          <p class="large text-muted">Proyecto de Tópicos Especiales , Segundo Bimestre, Aplicación Web</p>
         </div>
       </div>
     </div>
@@ -308,7 +269,7 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2017 Start Bootstrap. All Rights Reserved.</p>
+      <p>&copy; 2017 Tópicos Especiales. All Rights Reserved.</p>
       <ul class="list-inline">
         <li class="list-inline-item">
           <a href="#">Privacy</a>
@@ -322,32 +283,4 @@
       </ul>
     </div>
   </footer>
-  <!--<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" [routerLink]="['principal']">Inicio</a>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Cómo Usar</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" [routerLink]="['/admin']">Administrador</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" [routerLink]="['/cajero']">Cajero</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <div class="form-group">
-          <input type="text" class="form-control" name="username" placeholder="Username">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" name="password" placeholder="Password">
-        </div>
-        <button type="submit" class="btn btn-default">Sign In</button>
-      </form>
-    </div>
-  </nav>-->
+</div>

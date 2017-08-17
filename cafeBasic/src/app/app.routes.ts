@@ -18,7 +18,7 @@ const APP_ROUTES: Routes = [
   { path: 'cajero', component: CajeroComponent},
   { path: 'diario', component: DiarioComponent},
   { path: 'registrousuario/:id', component: RegistroUsuarioComponent},
-  { path: 'registroproducto', component: RegistroProducComponent},
+  { path: 'registroproducto/:id', component: RegistroProducComponent},
   { path: 'registropedido', component: RegistroPedidoComponent},
   { path: 'prueba', component: PruebaComponent},
   { path: 'listausers', component: ListaUsuariosComponent},
