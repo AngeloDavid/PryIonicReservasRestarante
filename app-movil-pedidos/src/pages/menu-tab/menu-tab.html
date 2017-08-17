@@ -1,4 +1,7 @@
-<ion-tabs >
+<ion-tabs  selectedIndex="1">
+  <ion-tab tabIcon="ios-list"  [root]="tab2" [rootParams]="4"></ion-tab>
   <ion-tab tabIcon="contact" tabTitle="snack" [root]="tab1" [rootParams]="cat"></ion-tab>
   <ion-tab *ngFor="let bar of tabs" tabIcon="contact" tabTitle="{{bar.des_cat}}" [root]="tab1" [rootParams]="bar.id"></ion-tab>
+
 </ion-tabs>
+

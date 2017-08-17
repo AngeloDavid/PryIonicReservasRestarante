@@ -29,7 +29,7 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item-sliding *ngFor="let prod of listaProducts">
+    <ion-item-sliding *ngFor="let prod of listaProducts ; let i =index">
         <ion-item (click)="popProducto(prod)">
           <ion-thumbnail item-start>
             <img [src]="prod.img_pro">
@@ -39,7 +39,7 @@
           <ion-note item-end>$ {{prod.pre_pro}}</ion-note>
         </ion-item>
         <ion-item-options side="right">
-          <button ion-button color="secondary">
+          <button ion-button color="secondary" (click)="pedir(i)" >
             <ion-icon name="md-restaurant"></ion-icon>
               Pedir
           </button>
@@ -47,7 +47,7 @@
       </ion-item-sliding>
 
     <!--DESDE MENU-->
-    <ion-item-sliding *ngFor="let prod of listaProducts_menu">
+    <!--<ion-item-sliding *ngFor="let prod of listaProducts_menu">
       <ion-item (click)="popProducto(prod)">
         <ion-thumbnail item-start>
           <img [src]="prod.img_pro">
@@ -57,12 +57,12 @@
         <ion-note item-end>$ {{prod.pre_pro}}</ion-note>
       </ion-item>
       <ion-item-options side="right">
-        <button ion-button color="secondary">
+        <button ion-button color="secondary" (click)="">
           <ion-icon name="md-restaurant"></ion-icon>
           Pedir
         </button>
       </ion-item-options>
-    </ion-item-sliding>
+    </ion-item-sliding>-->
   </ion-list>
 
 </ion-content>

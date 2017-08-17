@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {UsuarioProvProvider} from '../../providers/usuario-prov/usuario-prov';
-import { ToastController } from 'ionic-angular';
+import { ToastController,Events } from 'ionic-angular';
 import {MenuTabPage} from '../menu-tab/menu-tab';
+import { Storage } from '@ionic/storage';
 /**
  * Generated class for the LoginPage page.
  *
@@ -20,7 +21,7 @@ export class LoginPage {
     username :null,
     password: null
   };
-  constructor(public navCtrl: NavController, public navParams: NavParams, private userProv: UsuarioProvProvider, private  toastCtrl:ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private userProv: UsuarioProvProvider, private  toastCtrl:ToastController, public events:Events,public storage: Storage ) {
 
   }
 
@@ -38,7 +39,12 @@ export class LoginPage {
       this.userProv.loginUSer(this.usuario.username,this.usuario.password).subscribe(
         resp=>{
           if(resp.id !=-1){
-            this.navCtrl.setRoot(MenuTabPage,{"params":resp.id});
+            this.navCtrl.setRoot(MenuTabPage);
+            this.events.publish('user:login',resp.id);
+            this.storage.clear();
+            this.storage.set('indice',0);
+            this.storage.set('id',resp.id);
+
           }
         }
       );

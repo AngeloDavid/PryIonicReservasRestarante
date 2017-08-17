@@ -12,6 +12,10 @@ import {HttpModule} from '@angular/http';
 import { ProductProvProvider } from '../providers/product-prov/product-prov';
 import { UsuarioProvProvider } from '../providers/usuario-prov/usuario-prov';
 
+import { IonicStorageModule } from '@ionic/storage';
+import { DetPedidoProvider } from '../providers/det-pedido/det-pedido';
+import { CatPedidoProvider } from '../providers/cat-pedido/cat-pedido';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -29,7 +33,8 @@ import { UsuarioProvProvider } from '../providers/usuario-prov/usuario-prov';
   imports: [
     HttpModule,
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -46,12 +51,15 @@ import { UsuarioProvProvider } from '../providers/usuario-prov/usuario-prov';
     LoginPage
   ],
   providers: [
+
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CategoriasProvProvider,
     ProductProvProvider,
-    UsuarioProvProvider
+    UsuarioProvProvider,
+    DetPedidoProvider,
+    CatPedidoProvider
   ]
 })
 export class AppModule {}

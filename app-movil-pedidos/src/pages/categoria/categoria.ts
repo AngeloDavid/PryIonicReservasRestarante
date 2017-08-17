@@ -18,11 +18,19 @@ import { MenuPage } from '../index.pages';
 export class CategoriaPage {
 
   categories: Categoria[]=[];
+  data:any;
   constructor(public navCtrl: NavController, public navParams: NavParams,private cat_prov: CategoriasProvProvider) {
+    let id= navParams.data;
+    console.log(id);
+    console.log(this.data);
     this.cat_prov.consultarCat().subscribe(
       resp => {
-        this.categories=resp;
-        console.log(this.categories);
+        let categoriesR=resp;
+        console.log(categoriesR);
+        for(let i= id;i<categoriesR.length;i++){
+          this.categories.push(categoriesR[i]);
+        }
+
       });
   }
 

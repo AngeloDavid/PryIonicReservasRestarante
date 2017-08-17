@@ -20,5 +20,23 @@
 
 
 <ion-content padding>
+  <h2 text-center>Pedido</h2>
+  <ion-list>
+    <ion-item-sliding *ngFor="let pedido of pedidos; let i =index">
+      <ion-item>
+        <h2>{{pedido.fk_Prod_de.tit}}</h2>
+         Cant:{{pedido.cant_det}}
+        <p> Tam: {{pedido.fk_Prod_de.tam}} Pre:{{pedido.fk_Prod_de.pre }}  </p>
+        <ion-note item-end>$ {{pedido.st_det}}</ion-note>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger"  >
+          <ion-icon name="md-restaurant"></ion-icon>
+          eliminar
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 
+  <button ion-button large (click)="pedir()">Pedir</button>
 </ion-content>

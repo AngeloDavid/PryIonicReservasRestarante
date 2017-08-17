@@ -11,12 +11,12 @@
       <ion-item text-center>
         <ion-icon name="contact" md="md-contact"></ion-icon>
         <h2>{{userInfo.nom_user}} {{userInfo.ape_user}} </h2>
-        <p>Ugh. As if.</p>
+        <p>{{userInfo.ema_user}}</p>
       </ion-item>
-      <button ion-item (click)="irpagina(category)"><ion-icon name="book" item-start></ion-icon>Menu</button>
+      <button ion-item (click)="irpagina(menu)"><ion-icon name="book" item-start></ion-icon>Menu</button>
       <button ion-item (click)="irpagina(Pedido)"><ion-icon name="list-box" item-start></ion-icon>Pedido Actual</button>
-      <button ion-item (click)="irpagina(perfil)"><ion-icon name="person" item-start></ion-icon>Perfil</button>
-      <button ion-item ><ion-icon name="log-out" item-start></ion-icon>Logout</button>
+      <button ion-item (click)="irpaginaPer()" ><ion-icon name="person" item-start></ion-icon>Perfil</button>
+      <button ion-item (click)="irpagina(login)"><ion-icon name="log-out" item-start></ion-icon>Logout</button>
     </ion-list>
 
   </ion-content>

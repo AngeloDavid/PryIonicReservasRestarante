@@ -7,11 +7,11 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-buttons>
-      <button ion-button icon-only (click)="mostarMenu()">
+
+      <button ion-button  menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
-    </ion-buttons>
+
     <ion-title>Perfil</ion-title>
   </ion-navbar>
 
@@ -19,5 +19,34 @@
 
 
 <ion-content padding>
+  <ion-item text-center>
+    <ion-icon name="contact" md="md-contact"></ion-icon>
+    <h2>Perfil</h2>
+  </ion-item>
+  <ion-list>
+    <ion-item>
+      <ion-label color="primary" fixed>Nombre</ion-label>
+      <ion-input [(ngModel)]="userInfo.nom_user" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" fixed>Apellido</ion-label>
+      <ion-input [(ngModel)]="userInfo.ape_user" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" fixed>email</ion-label>
+      <ion-input type="email" [(ngModel)]="userInfo.ema_user"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" fixed>Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="userInfo.pass_user"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" fixed>celular</ion-label>
+      <ion-input type="tel" [(ngModel)]="userInfo.cel_user"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button round outline (click)="guardarDatos()" >Guardar</button>
+
 
 </ion-content>

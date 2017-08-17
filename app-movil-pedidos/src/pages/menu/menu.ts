@@ -3,6 +3,9 @@ import { NavController, NavParams,MenuController, ModalController, PopoverContro
 import {PedidoActualPage, ProductoPage} from '../../pages/index.pages';
 import {ProductProvProvider} from '../../providers/product-prov/product-prov';
 import {Producto} from "../../interfaces/producto.module";
+import {Det_pedido} from "../../interfaces/Det_pedido.module";
+import { Storage } from '@ionic/storage';
+
 /**
  * Generated class for the MenuPage page.
  *
@@ -22,24 +25,14 @@ export class MenuPage {
   category:Producto[]=[];
   id_Cat:number;
   constructor(public navCtrl: NavController, public navParams: NavParams,private menucrl: MenuController, private modalctrl: ModalController,
-              private prod_provCtrl: ProductProvProvider, private pop_Ctrl:PopoverController ) {
+              private prod_provCtrl: ProductProvProvider, private pop_Ctrl:PopoverController,public storage: Storage ) {
 
     this.id_Cat= this.navParams.get("params");
-
     this.data = navParams.data;
-    //this.listaProducts = navParams.data;
-    console.log("id categoria");
-    console.log(this.data);
 
     this.prod_provCtrl.consultarProd().subscribe(
       resp=>{
         this.category=resp;
-        console.log(this.category);
-        console.log("Imprimiendo id cate");
-        console.log(this.id_Cat + "<--");
-        console.log('desde menu.ts');
-        console.log(this.category[0].fkPro_cat.id);
-
         //Para la página categorias
         for(let i=0; i<this.category.length;i++) {
           if (this.id_Cat == this.category[i].fkPro_cat.id) {
@@ -66,12 +59,8 @@ export class MenuPage {
             }
 
           }
-          /*console.log('dentro for');
-          //console.log(this.listaProducts[0].tit_pro);
-          /*console.log(this.category[i].prods_cat);*/
+
         }
-        /*console.log('productos de categoria');
-        console.log(this.category);*/
 
 
       });
@@ -84,9 +73,7 @@ export class MenuPage {
   mostarMenu(){
     this.menucrl.toggle();
   }
-  mostrarM(){
-   this.menucrl.open("2");
-  }
+
 
   mostrarPedido(){
     let modal= this.modalctrl.create(PedidoActualPage);
@@ -96,6 +83,31 @@ export class MenuPage {
   popProducto(product:Producto){
     let popover = this.pop_Ctrl.create(ProductoPage,{'param':product});
     popover.present();
+  }
+
+  pedir(i:number){
+    let producto:Producto=this.listaProducts[i];
+
+    let DetP:Det_pedido = {
+      cant_det:1,
+      st_Det:producto.pre_pro ,
+      fk_Prod_de:{id:producto.id,
+                  tit:producto.tit_pro,
+                  pre:producto.pre_pro,
+                  tam:producto.tam_pro
+      }
+    };
+
+    this.storage.get('indice').then(resp=>{
+       let index=resp;
+      console.log(index+"pedido");
+       this.storage.set(index+'',DetP);
+       index++;
+       this.storage.set('indice',index);
+    });
+
+
+    //
   }
 
 }

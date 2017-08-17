@@ -14,7 +14,7 @@ import {User} from '../../interfaces/user.module';
 @Injectable()
 export class UsuarioProvProvider {
 
-  userSession: User;
+
 
   urlBDD: string ="http://port-3000.prydusini-angelodavid95426006.codeanyapp.com/Usuario";
   constructor(public http: Http) {
@@ -31,6 +31,15 @@ export class UsuarioProvProvider {
 
   public getUser(id:number){
     return this.http.get(this.urlBDD+"/"+id).map(
+      resp=>{
+        return resp.json();
+      }
+    );
+  }
+
+  public updateUSer(UserUp:User){
+    let datos= JSON.stringify(UserUp);
+    return this.http.post(this.urlBDD+"/"+UserUp.id,datos).map(
       resp=>{
         return resp.json();
       }
